@@ -1,0 +1,34 @@
+[
+  {
+    "index": 1,
+    "name": "Club",
+    "equipment_category": "Weapon",
+    "weapon_category:": "Simple",
+    "weapon_range": "Melee",
+    "category_range": "Simple Melee",
+    "cost": {
+      "quantity": 1,
+      "unit": "sp"
+    },
+    "damage": {
+      "dice_count": 1,
+      "dice_value": 4,
+      "damage_type": {
+        "name": "Bludgeoning"
+      }
+    },
+    "range": {
+      "normal": 5,
+      "long": null
+    },
+    "weight": 2,
+    "properties": [
+      {
+        "name": "Light"
+      },
+      {
+        "name": "Monk"
+      }
+    ]
+  }
+]
