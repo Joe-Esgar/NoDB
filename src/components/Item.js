@@ -107,18 +107,18 @@ export default class Item extends Component {
             });
           }}
           placeholder="damage type" */}
-        />
+
         <input
           onChange={e =>
             this.setState({ range: { ...range, normal: e.target.value } })
           }
           placeholder="range"
         />
+        <br />
         <input
           onChange={e => this.setState({ weight: e.target.value })}
           placeholder="weight"
         />
-        \
         <button onClick={() => updateItemByIndex(index, this.state)}>
           Update
         </button>

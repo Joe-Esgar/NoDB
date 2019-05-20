@@ -2,7 +2,11 @@ let inventory = require("../db.json");
 let indexCount = 37;
 module.exports = {
   getAllWeapons: (req, res, next) => {
-    res.status(200).send(inventory);
+    if (inventory) {
+      res.status(200).send(inventory);
+    } else {
+      res.status(404).send("File not found");
+    }
   },
   postWeaponToInventory: (req, res, next) => {
     const {
@@ -69,9 +73,11 @@ module.exports = {
       inventory[indexToUpdate].range = range;
       inventory[indexToUpdate].weight = weight;
       // inventory[indexToUpdate].properties = properties;
+      console.log(inventory);
+      res.status(200).send(inventory);
+    } else {
+      res.status(404).send("Item not found");
     }
-    console.log(inventory);
-    res.status(200).send(inventory);
   },
   removeItem: (req, res, next) => {
     const deleteIndex = req.query.index;

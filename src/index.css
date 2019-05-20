@@ -6,7 +6,7 @@ html {
   background-size: cover;
 }
 
-h1 {
+header {
   width: 100%;
   height: 90px;
   text-align: center;
@@ -20,6 +20,7 @@ h1 {
 
 input {
   border: black;
+  width: 50px;
 }
 
 .wrapper {
@@ -31,7 +32,7 @@ input {
 .inv {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   width: 49%;
   font-family: fantasy;
 }
