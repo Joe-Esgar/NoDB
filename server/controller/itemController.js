@@ -64,14 +64,20 @@ module.exports = {
     if (indexToUpdate != -1) {
       console.log(inventory[indexToUpdate]["subtype:"]);
       inventory[indexToUpdate].name = name || inventory[indexToUpdate].name;
-      inventory[indexToUpdate].equipment_category = equipment_category;
-      inventory[indexToUpdate].weapon_range = weapon_range;
-      inventory[indexToUpdate].category_range = category_range;
-      inventory[indexToUpdate].weapon_category = weapon_category;
-      inventory[indexToUpdate].cost = cost;
-      inventory[indexToUpdate].damage = damage;
-      inventory[indexToUpdate].range = range;
-      inventory[indexToUpdate].weight = weight;
+      inventory[indexToUpdate].equipment_category =
+        equipment_category || inventory[indexToUpdate].equipment_category;
+      inventory[indexToUpdate].weapon_range =
+        weapon_range || inventory[indexToUpdate].weapon_range;
+      inventory[indexToUpdate].category_range =
+        category_range || inventory[indexToUpdate].category_range;
+      inventory[indexToUpdate].weapon_category =
+        weapon_category || inventory[indexToUpdate].weapon_category;
+      inventory[indexToUpdate].cost = cost || inventory[indexToUpdate].cost;
+      inventory[indexToUpdate].damage =
+        damage || inventory[indexToUpdate].damage;
+      inventory[indexToUpdate].range = range || inventory[indexToUpdate].range;
+      inventory[indexToUpdate].weight =
+        weight || inventory[indexToUpdate].weight;
       // inventory[indexToUpdate].properties = properties;
       console.log(inventory);
       res.status(200).send(inventory);

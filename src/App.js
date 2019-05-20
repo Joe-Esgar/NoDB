@@ -106,7 +106,7 @@ export default class App extends Component {
     });
     return (
       <div className="wrapper">
-        <header className="head">Bandit's Inventory</header>
+        <header className="head">Inventory Log TM</header>
         <div className="mine">
           <Mine />{" "}
         </div>
