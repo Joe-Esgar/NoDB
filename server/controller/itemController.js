@@ -1,5 +1,5 @@
 let inventory = require("../db.json");
-let indexCount = 2;
+let indexCount = 37;
 module.exports = {
   getAllWeapons: (req, res, next) => {
     res.status(200).send(inventory);

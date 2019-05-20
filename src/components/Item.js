@@ -38,7 +38,6 @@ export default class Item extends Component {
     return (
       <div>
         <ul>
-          <li>{index}</li>
           <li>Name: {name}</li>
           <li>Equip Cat: {equipment_category}</li>
           <li>Weap Cat: {weapon_category}</li>

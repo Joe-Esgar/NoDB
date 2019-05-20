@@ -2,13 +2,14 @@ import React, { Component } from "react";
 
 export default class Todo extends Component {
   render() {
-    const { note, index, list } = this.props;
+    const { note, index } = this.props;
     var deleteNote = () => {
-      return list.splice(index, 1);
+      console.log(this.props.list, "WRYYY");
+      return this.props.list.splice(index, 1);
     };
     return (
       <div>
-        <p>{note}</p>
+        <a href="https://www.youtube.com/watch?v=v6yg4ImnYwA">{note}</a>
         <button onClick={deleteNote} />
       </div>
     );
