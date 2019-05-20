@@ -21,6 +21,7 @@ export default class Input extends Component {
     return (
       <div>
         <input
+          className="shutupdestiny"
           value={this.state.input}
           placeholder="Enter new item"
           onChange={e => this.handleInputChange(e.target.value)}

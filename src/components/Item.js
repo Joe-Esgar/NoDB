@@ -36,7 +36,7 @@ export default class Item extends Component {
     console.log(this.state);
     console.log(cost);
     return (
-      <div>
+      <div className="item-container">
         <ul>
           <li>Name: {name}</li>
           <li>Equip Cat: {equipment_category}</li>

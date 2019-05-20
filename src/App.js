@@ -106,11 +106,13 @@ export default class App extends Component {
     });
     return (
       <div className="wrapper">
-        <header className="head">Inventory Log TM</header>
-        <div className="mine">
-          <Mine />{" "}
+        <header className="head">Inventory Log TM** donut steal</header>
+        <div className="flexyboi">
+          <div className="mine">
+            <Mine />{" "}
+          </div>
+          <div className="inv">{mappedInventory}</div>
         </div>
-        <div className="inv">{mappedInventory}</div>
       </div>
     );
   }

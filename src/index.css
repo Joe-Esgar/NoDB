@@ -19,7 +19,6 @@ header {
 }
 
 input {
-  border: black;
   width: 50px;
 }
 
@@ -29,17 +28,49 @@ input {
   flex-wrap: wrap;
 }
 
+.flexyboi {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 85vh;
+}
+
 .inv {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 49%;
+  width: 45%;
   font-family: fantasy;
+  font-size: 25px;
+  overflow: scroll;
+  height: 100%;
 }
 
 .mine {
   display: flex;
   flex-direction: row;
-  width: 51%;
+  width: 45%;
   justify-content: center;
+  font-size: 25px;
+  overflow: scroll;
+  /* height: 800px; */
+  font-family: fantasy;
+  flex-wrap: wrap;
+}
+
+.shutupdestiny {
+  width: 180px;
+  margin-bottom: 15px;
+  height: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-family: fantasy;
+}
+
+.item-container {
+  height: 90%;
+  margin: 25px auto;
 }
