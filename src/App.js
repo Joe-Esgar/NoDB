@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./index.css";
 import axios from "axios";
 import Item from "./components/Item";
 import Mine from "./components/Mine";
@@ -9,14 +9,13 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      inventory: [],
-      list: []
+      inventory: []
     };
     this.getItemsFromExternalApi = this.getItemsFromExternalApi.bind(this);
     this.getMyInventory = this.getMyInventory.bind(this);
     this.updateItemByIndex = this.updateItemByIndex.bind(this);
-    this.changeHandler = this.changeHandler.bind(this);
     this.deleteItems = this.deleteItems.bind(this);
+    this.postItemsToList = this.postItemsToList.bind(this);
   }
 
   componentDidMount() {
@@ -68,7 +67,7 @@ export default class App extends Component {
     });
   }
 
-  deleteItems(index, item, id) {
+  deleteItems(index, item) {
     axios.delete(`/api/inventoryMan?index=+${index}`, { item }).then(res => {
       this.setState({
         inventory: res.data
@@ -76,12 +75,8 @@ export default class App extends Component {
     });
   }
 
-  changeHandler(value) {
-    this.setState({ list: [...this.state.list], value });
-  }
-
   render() {
-    const { inventory, list } = this.state;
+    const { inventory } = this.state;
     console.log("INVENTORY", inventory);
     const mappedInventory = inventory.map((element, index) => {
       const weapon_category = element["weapon_category:"];
@@ -103,6 +98,7 @@ export default class App extends Component {
               properties={element.properties}
               updateItemByIndex={this.updateItemByIndex}
               deleteItems={this.deleteItems}
+              postItemsToList={this.postItemsToList}
             />{" "}
           </div>
         </div>
@@ -110,9 +106,9 @@ export default class App extends Component {
     });
     return (
       <div className="wrapper">
-        <header>Inventory Log</header>
+        <h1 className="head">Bandit's inventory</h1>
         <div className="mine">
-          <Mine list={list} changeHandler={this.changeHandler} />{" "}
+          <Mine />{" "}
         </div>
         <div className="inv">{mappedInventory}</div>
       </div>

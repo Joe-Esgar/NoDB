@@ -1,27 +1,26 @@
-import React from "react";
+import React, { Component } from "react";
+import Input from "./Input";
+import Notes from "./Notes";
 
-function Mine(props) {
-  const { list, changeHandler } = props;
-  const bs = () => {
-    list.map((val, index) => {
-      return <p key={index}>{val}</p>;
-    });
-    console.log(list, "HOLY GOD ITS MY LIST");
-  };
-  var name;
-  return (
-    <div className="Mine">
-      <div>
-        <input
-          onChange={e => {
-            name = e.target.value;
-          }}
-        />
-        <button onClick={() => changeHandler(name)}>click</button>
-        <div>{bs}</div>
+export default class Mine extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      list: []
+    };
+    this.listHandler = this.listHandler.bind(this);
+  }
+
+  listHandler(value) {
+    this.setState({ list: [...this.state.list, value] });
+  }
+
+  render() {
+    return (
+      <div className="Mine">
+        <Input add={this.listHandler} />
+        <Notes list={this.state.list} />
       </div>
-    </div>
-  );
+    );
+  }
 }
-
-export default Mine;

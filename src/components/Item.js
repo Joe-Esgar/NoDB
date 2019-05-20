@@ -30,7 +30,8 @@ export default class Item extends Component {
       weight,
       properties,
       updateItemByIndex,
-      deleteItems
+      deleteItems,
+      postItemsToList
     } = this.props;
     console.log(this.state);
     console.log(cost);
@@ -123,6 +124,7 @@ export default class Item extends Component {
           Update
         </button>
         <button onClick={() => deleteItems(index, this.state)}>Delete</button>
+        <button onClick={() => postItemsToList(this.state)}>Add </button>
       </div>
     );
   }
